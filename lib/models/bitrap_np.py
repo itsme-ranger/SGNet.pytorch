@@ -85,7 +85,10 @@ class BiTraPNP(nn.Module):
         
         # 4. Draw sample
         with torch.set_grad_enabled(False):
-            K_samples = torch.normal(self.nu, self.sigma, size = (enc_h.shape[0], K, self.args.LATENT_DIM)).cuda()
+            # K_samples = torch.normal(self.nu, self.sigma, size = (enc_h.shape[0], K, self.args.LATENT_DIM)).cuda() # Oldline
+            K_samples = torch.normal(self.nu, self.sigma, size = (enc_h.shape[0], K, self.args.LATENT_DIM))
+            if torch.cuda.is_available():
+                K_samples = K_samples.cuda()
 
         probability = reconstructed_probability(K_samples)
         Z_std = torch.exp(0.5 * Z_logvar)

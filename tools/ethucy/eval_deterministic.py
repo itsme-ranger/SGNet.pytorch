@@ -45,6 +45,7 @@ def main(args):
 
     # test
     test_loss, ADE_08, FDE_08, ADE_12, FDE_12 = test(model, test_gen, criterion, device)
-
+    print("Test Loss: {:.4f}".format(test_loss))
+    
 if __name__ == '__main__':
     main(parse_args())

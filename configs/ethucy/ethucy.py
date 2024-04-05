@@ -1,6 +1,6 @@
 from configs import parse_base_args
 
-__all__ = ['parse_sgnet_args']
+__all__ = ['parse_sgd_args', 'parse_sgnet_args']
 
 def parse_sgnet_args():
     parser = parse_base_args()
@@ -23,3 +23,6 @@ def parse_sgnet_args():
     parser.add_argument('--K', default=20, type=int)
 
     return parser.parse_args()
+
+def parse_sgd_args():
+    return parse_sgnet_args()
