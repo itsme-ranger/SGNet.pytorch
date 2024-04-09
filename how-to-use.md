@@ -4,6 +4,20 @@ This is the tutorial how to run
 
 ## Setup
 
+### Env Setup
+
+If you are using other than Ubuntu, I suggest to use Docker. Here it's the tutorial:
+
+1. Run docker container (`docker run ..`) with Ubuntu as the image. Here it's the example with running latest image of Ubuntu:
+   ```bash
+   docker run -itd --name sgnet-demo --net host -v <folder-in-host>:/<folder-in-container> ubuntu
+   ```
+   Note: Main directory of Ubuntu image is in `/` and main `~` path is `/root` and there is no sudo.
+
+If you are already using Ubuntu, then you should be fine without using Docker, but you should have insert `sudo` prior to `apt` command
+
+### Dependencies Setup
+
 1. Clone repos
 ```bash
 git clone --recurse-submodules -b runnable https://github.com/itsme-ranger/SGNet.pytorch.git
