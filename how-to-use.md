@@ -37,6 +37,7 @@ git clone --recurse-submodules -b runnable https://github.com/itsme-ranger/Traje
       cd Trajectron-plus-plus
       conda install --yes --file requirements-conda.txt
       python3 -m pip install -r requirements.txt
+      echo "export PYTHONPATH=\${PYTHONPATH}:<PATH-TO-SGNet.pytorch>" >> ~/.bashrc
       ```
       **Important note:** you're might be encountered an error during this step. Please check [Solve for Setup Failure](#solve-for-setup-failure) section below
 
@@ -82,4 +83,4 @@ cd nuscenes-devkit
 3. Open `setup/requirements.txt`, change `opencv-python` into `opencv-python-headless==4.1.1.26`
 4. `export PYTHONPATH="${PYTHONPATH}:<YOUR-NUSCENE-DEVKIT-PARENT-PATH>/nuscenes-devkit/python-sdk"`
 5. `python3 -m pip install -r setup/requirements.txt`
-6. 
+6. `echo "export PYTHONPATH=\${PYTHONPATH}:<PATH-TO-nuscenes-devkit>/python-sdk" >> ~/.bashrc`
