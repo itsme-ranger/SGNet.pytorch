@@ -116,7 +116,7 @@ def test(model, test_gen, criterion, device):
             total_dec_loss += dec_loss.item()* batch_size
 
             all_dec_traj_np = all_dec_traj.to('cpu').numpy()
-            input_traj_np = input_traj.to('cpu').numpy()
+            input_traj_np = input_traj.to('cuda')
             target_traj_np = target_traj.to('cpu').numpy()
 
             # Decoder
